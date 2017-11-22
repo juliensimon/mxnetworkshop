@@ -4,8 +4,8 @@ import cv2, time
 from collections import namedtuple
 
 def loadModel():
-	model, arg_params, aux_params = mx.model.load_checkpoint("mlp", 50)
-	#model, arg_params, aux_params = mx.model.load_checkpoint("lenet", 20)
+	#model, arg_params, aux_params = mx.model.load_checkpoint("mlp", 50)
+	model, arg_params, aux_params = mx.model.load_checkpoint("lenet", 20)
 	mod = mx.mod.Module(model)
 	mod.bind(for_training=False, data_shapes=[('data', (1,1,28,28))])
 	mod.set_params(arg_params, aux_params)

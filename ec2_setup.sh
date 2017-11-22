@@ -9,9 +9,9 @@ aws ec2 create-key-pair --key-name mxnetworkshop --query 'KeyMaterial' --output 
 chmod 400 mxnetworkshop.pem
 
 # Deep Learning AMI, Ubuntu edition
-# https://aws.amazon.com/marketplace/pp/B01M0AXXQB
+# https://aws.amazon.com/marketplace/pp/B06VSPXKDX
 # This is the AMI for us-west-2
-AMI=ami-df77b6a7
+AMI=ami-f1d51489
 
 TYPE=c4.xlarge
 #TYPE=p2.xlarge
@@ -29,4 +29,5 @@ sleep 20
 # Get public DNS name for the newly created instance
 DNS=`aws ec2 describe-instances --filters Name=tag:Name,Values=mxnetworkshop --query 'Reservations[*].Instances[*].PublicDnsName' --output text`
 echo "\n\n" $DNS "\n\n"
+
 

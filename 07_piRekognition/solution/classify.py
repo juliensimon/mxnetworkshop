@@ -1,14 +1,14 @@
-import camera,polly,rekognition
+import boto3,camera,polly,rekognition
 
-def copyLocalFileToS3(filename, bucketName)
+def copyLocalFileToS3(filename, bucketName):
     boto3.client('s3').upload_file(filename, bucketName, filename)
 
 if __name__ == "__main__":
 
 	filename = "myimage.jpg"
-	bucketname = YOUR_OWN_BUCKET
+	bucketname = "jsimon-public"
 
-	takePicture(filename)
+	# takePicture(filename)
 
 	copyLocalFileToS3(filename, bucketname)
 
@@ -19,10 +19,10 @@ if __name__ == "__main__":
 	print labels
 
 	top_label = labels[0]
-	message = "I'm "+top_label['Confidence']+"% sure that this is a "+top_label['Name']+". "
+	message = "I'm "+str(top_label['Confidence'])+"% sure that this is a "+top_label['Name']+". "
 	polly.speak(p, message)
 
-        faces = rekognition.detectFaces(reko, image)
+        faces = rekognition.detectFaces(reko, filename)
 	print faces
 
 	face_count = (str)(len(faces))

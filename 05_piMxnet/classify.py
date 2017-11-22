@@ -34,7 +34,7 @@ def predict(filename, model, categories, n):
 	model.forward(Batch([array]))
     	prob = model.get_outputs()[0].asnumpy()
 	t2 = time.time()
-	print "Predicted in %.2f microseconds" % (t2-t1)
+	print (t2-t1)
 
 	prob = np.squeeze(prob)
     	sortedprobindex = np.argsort(prob)[::-1]

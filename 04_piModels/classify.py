@@ -49,14 +49,14 @@ def init(modelname):
 	return model, cats
 
 if __name__ == "__main__":
-	#vgg16,c = init("vgg16")
+	vgg16,c = init("vgg16")
 	resnet152,c = init("resnet-152")
 	inceptionv3,c = init("Inception-BN")
 
 	filename = sys.argv[1] 
 
 	print ("*** VGG16")
-#	print predict(filename,vgg16,c,5)
+	print predict(filename,vgg16,c,5)
 	print ("*** ResNet-152")
 	print predict(filename,resnet152,c,5)
 	print ("*** Inception v3")

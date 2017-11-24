@@ -62,7 +62,7 @@ def build_top1_message(topN):
 if __name__ == "__main__":
 
 	filename = "myimage.jpg"
-	#takePicture(filename)
+	# camera.takePicture(filename)
 
 	inceptionv3,c = init("Inception-BN")
 	top5 = predict(filename,inceptionv3,c,5)

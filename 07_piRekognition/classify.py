@@ -1,4 +1,5 @@
-import camera,polly,rekognition
+import boto3,polly,rekognition
+# import camera
 
 def copyLocalFileToS3(filename, bucketName):
     boto3.client('s3').upload_file(filename, bucketName, filename)
@@ -6,7 +7,8 @@ def copyLocalFileToS3(filename, bucketName):
 if __name__ == "__main__":
 
 	filename = "myimage.jpg"
-	# takePicture(filename)
+
+	# camera.takePicture(filename)
 
 	#
 	# TO DO: copy local image to an S3 bucket

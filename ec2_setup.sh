@@ -4,6 +4,7 @@ aws configure set default.region us-west-2
 
 aws ec2 create-security-group --group-name mxnetworkshop-sg --description "Security Group for the MXNet workshop"
 aws ec2 authorize-security-group-ingress --group-name mxnetworkshop-sg --protocol tcp --port 22 --cidr 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-name mxnetworkshop-sg --protocol tcp --port 8888 --cidr 0.0.0.0/0
 
 aws ec2 create-key-pair --key-name mxnetworkshop --query 'KeyMaterial' --output text > mxnetworkshop.pem
 chmod 400 mxnetworkshop.pem

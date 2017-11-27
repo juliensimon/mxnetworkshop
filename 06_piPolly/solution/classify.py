@@ -2,7 +2,8 @@ import mxnet as mx
 import numpy as np
 import cv2,sys,time
 from collections import namedtuple
-import camera,polly
+import polly
+#import camera
 
 def loadModel(modelname):
 	sym, arg_params, aux_params = mx.model.load_checkpoint(modelname, 0)
@@ -72,4 +73,4 @@ if __name__ == "__main__":
 	print message
 
 	p = polly.connectToPolly()
-        polly.speak(p, message)
+        polly.soundfile(p, message)

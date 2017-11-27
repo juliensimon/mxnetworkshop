@@ -28,5 +28,5 @@ if __name__ == "__main__":
 
 	face_count = (str)(len(faces))
 	message = face_count+" faces have been detected"
-	polly.speak(p, message)
+	polly.soundfile(p, message)
 

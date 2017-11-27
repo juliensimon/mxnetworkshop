@@ -23,4 +23,4 @@ if __name__ == "__main__":
 	#
 
 	p = polly.connectToPolly()
-	polly.speak(p, message)
+	polly.soundfile(p, message)

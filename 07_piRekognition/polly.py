@@ -22,3 +22,11 @@ def speak(polly, text, format='ogg_vorbis', voice='Brian'):
     soundfile.close()
     play('/tmp/sound')
     os.remove(filename)
+
+def soundfile(polly, text, format='ogg_vorbis', voice='Brian'):
+    filename="/tmp/sound.ogg"
+    resp = polly.synthesize_speech(OutputFormat=format, Text=text, VoiceId=voice)
+    soundfile = open(filename, 'w')
+    soundBytes = resp['AudioStream'].read()
+    soundfile.write(soundBytes)
+    soundfile.close()
